@@ -1,0 +1,84 @@
+1. 리엑트의 이해
+   - SPA를 위한 JavaScript 라이브러리. 
+
+     메타 ( 구 페이스북 ) 
+   - FrontEnd 의 기반 기술 : HTML, CSS, JavaScript 
+ 	- MPA : 뷰(view) 페이지가 여러개이다. JSP, Thymeleaf, .... 
+		Server에서 랜더링< html 코드를 생성>  한다.   <== WAS : 톰캣,
+		- 서버의 부하가 늘어난다. 
+		- 반복된 코드가 많다. 
+		- 수정, 유지 보수 하기가 어려울 수 있다. <Enterprise Site> 
+		- 요청한 페이지 전체 페이지가 렌더링 됨
+			- 비동기 통신(ajax) 을 사용하면 일부분만 랜더링 할수 있다.  
+  
+	- SPA : 뷰(view) 페이지가 하나이다. index.html
+		- 하나의 뷰 페이지에서 컴포넌트를 호출해서 사용함. 
+		- 중복 코드를 줄여줌. 
+		- 유지 보수가 쉬워짐.  
+		- 하나의 뷰 페이지에서 컴포넌트가 변경 
+		- 전체 페이지가 랜더링 되지 않고 변경된 부분만 랜더링 
+		- 클라이언트 브라우져가 랜더링을 한다. 
+		- 서버의 부하를 감소 함. 
+		- 가상돔 : 변경된 부분만 빠르게 랜더링 할수 있는 가상 공간 
+		- 서버에서 값만 받아옴 ( JSON , XML)  , 값을 받아서 랜더링은 클라이언트 브라우져에서 함. 
+		- 서버의 비동기 통신 : XMLHttpRequest, Fetch, AJax, xios 
+			- 서버에서 값(JSON) 만 받아옴.
+
+		- 앵귤러(구글, 2022 지원종료), 리엑트(메타, 배워야할 내용이 많다. ), 뷰(중국의 개발자, 쉽다. )  
+
+
+2. 리엑트 셋팅 
+  - 다양한 라이브러리를 import 해서 사용 
+  - node.js 가 필수 적으로  설치 되어있어야함.  구글 : node 다운로드    검색 
+	https://nodejs.org/en/download
+	LTS  버젼 다운로드 : LTS Version: 20.11.1
+  - node -v  
+
+  - 리엑트 에서 사용되는 라이브러리를 다운로드 하고 관리하는 명령어 , 
+	npm  : 기본 내장되어 있음. 느릴 수 있다.  
+	yarn  : 설치가 필요함.  빠름. 
+	vite   : 설치가 필요함.  빠름. 	<== 리엑트 에서 권장 사항 
+
+  - yarn 설치 : windos 의 모든 리엑트 프로잭트에서 사용 할 수 있도록 global  하게 yarn 을 설치함.
+ 
+	npm i -g yarn 
+	npm install -g yarn 
+	npm install --global yarn 
+
+  - 리엑트 프로잭트 생성 
+     - yarn 을 사용해서 생성 : 빠름 
+	cd c:\ 
+	mkdir Workspace-React
+	cd Workspace-React
+	yarn create react-app my-react-app 		<== my-react-app : 프로 잭트 생성 
+
+	cd my-react-app			<== 프로잭트 폴더로 이동
+	yarn start 			<== React 프로잭트 실행 : 기본적으로 : localhost:3000 포트에서 실행 
+
+	명령 프롬프트 :     <가상 서버 작동 중지> 
+	CTRL + c 
+
+     - npm을 사용해서 생성 : 느림 
+	npx create-react-app my-react-app2 		<== my-react-app2  : 프로잭트 생성 
+	cd my-react-app2
+	npm start 				<== React 프로잭트 실행 : 기본적으로 : localhost:3000 포트에서 실행 
+
+3. 프로 잭트 구조 
+  
+  - node_modules : 리엑트에서 사용될 각종 라이브러리가 저장됨[282MB] , git 에 올릴 필요가 없는 파일  	
+  - public       : client 에게 출력될 view 페이지가 저장되어있는 폴더, index.html  <== SPA ( 뷰 페이지가 1개 ) 
+  - src         : 
+	컴포넌트( *.js ) - 클래스형 컴포넌트( 옛날에 사용된 컴포넌트 )  , 함수형 컴포넌트 (요즘 사용하는 컴퍼넌트, 리엑트 훅  ) 
+	   - HTML, CSS, JS 를 컴포넌트 로 생성 , 호출해서 사용  
+	   - JSX 문법으로 생성 : JavaScript 를 확장해서 쉽게 랜더링 가능하도록 생성된 문법 
+  .gitignore  : gitHub에 전송되지 않도록 하는 파일 	   
+  package-lock.json : 현재 프로잭트에서 사용하는 라이브러리가 등록됨 <아주 상세한 정보를 출력>
+  package.json :  현재 프로잭트에서 사용하는 라이브러리가 등록됨 <간략 정보만 출력> 
+
+
+
+
+		
+
+
+   
